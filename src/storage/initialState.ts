@@ -1,0 +1,165 @@
+// src/storage/initialState.ts
+import { AppState } from '../types/finance';
+
+export function getPristineState(): AppState {
+  return {
+    initialBudget: 10000,
+    currentDay: 1,
+    totalDays: 30,
+    transactions: [],
+    commitments: [],
+    savingsGoals: [],
+    subscriptions: [],
+    appliedHistory: [],
+  };
+}
+
+export function getHackathonDemoState(): AppState {
+  return {
+    initialBudget: 10000,
+    currentDay: 8,
+    totalDays: 30,
+    transactions: [
+      {
+        id: 'tx-seed-1',
+        type: 'expense',
+        amount: 220,
+        category: 'Food & Chai',
+        description: 'Campus Canteen & Evening Chai',
+        day: 2,
+        date: '2026-10-02',
+        createdAt: '2026-10-02T16:30:00.000Z',
+      },
+      {
+        id: 'tx-seed-2',
+        type: 'expense',
+        amount: 400,
+        category: 'Metro & Transport',
+        description: 'Metro Smart Card Recharge (Monthly pass top-up)',
+        day: 3,
+        date: '2026-10-03',
+        createdAt: '2026-10-03T09:15:00.000Z',
+      },
+      {
+        id: 'tx-seed-3',
+        type: 'expense',
+        amount: 350,
+        category: 'College & Books',
+        description: 'Semester Project Spiral Binding & Materials',
+        day: 5,
+        date: '2026-10-05',
+        createdAt: '2026-10-05T14:00:00.000Z',
+      },
+      {
+        id: 'tx-seed-4',
+        type: 'expense',
+        amount: 480,
+        category: 'Food & Chai',
+        description: 'Hostel Biryani Night with Project Group',
+        day: 6,
+        date: '2026-10-06',
+        createdAt: '2026-10-06T20:45:00.000Z',
+      },
+      {
+        id: 'tx-seed-5',
+        type: 'expense',
+        amount: 250,
+        category: 'Mobile & Wifi',
+        description: 'Mobile 5G Data Booster Pack',
+        day: 7,
+        date: '2026-10-07',
+        createdAt: '2026-10-07T11:20:00.000Z',
+      },
+    ],
+    commitments: [
+      {
+        id: 'commit-seed-1',
+        title: 'PG Room & Maintenance Share',
+        amount: 2500,
+        dueDay: 15,
+        dueDate: '2026-10-15',
+        category: 'Other',
+        status: 'pending',
+        notes: 'Monthly fixed accommodation share with roommate.',
+        isRecurring: true,
+      },
+      {
+        id: 'commit-seed-2',
+        title: 'High-speed Fiber Wifi Share',
+        amount: 600,
+        dueDay: 18,
+        dueDate: '2026-10-18',
+        category: 'Mobile & Wifi',
+        status: 'pending',
+        notes: 'Split internet bill for hostel study desk.',
+        isRecurring: true,
+      },
+    ],
+    savingsGoals: [
+      {
+        id: 'goal-seed-1',
+        name: 'Emergency Cushion 🛡️',
+        targetAmount: 2500,
+        currentAmount: 1000,
+        targetDay: 30,
+        category: 'Safety',
+        contributions: [
+          {
+            id: 'contrib-seed-1',
+            amount: 1000,
+            day: 1,
+            date: '2026-10-01',
+            notes: 'Initial day 1 commitment to emergency fund',
+          },
+        ],
+        createdAt: '2026-10-01T08:00:00.000Z',
+      },
+      {
+        id: 'goal-seed-2',
+        name: 'Goa Weekend Trip Fund 🏖️',
+        targetAmount: 2000,
+        currentAmount: 0,
+        targetDay: 28,
+        category: 'Travel',
+        contributions: [],
+        createdAt: '2026-10-04T12:00:00.000Z',
+      },
+    ],
+    subscriptions: [
+      {
+        id: 'sub-seed-1',
+        name: 'Spotify Premium Student',
+        amount: 59,
+        billingFrequency: 'monthly',
+        billingDay: 12,
+        category: 'Entertainment & OTT',
+        isActive: true,
+        notes: 'Essential study playlist subscription',
+      },
+      {
+        id: 'sub-seed-2',
+        name: 'Cloud Storage 100GB',
+        amount: 130,
+        billingFrequency: 'monthly',
+        billingDay: 24,
+        category: 'College & Books',
+        isActive: true,
+        notes: 'Backup for academic portfolios and code repos',
+      },
+    ],
+    appliedHistory: [
+      {
+        id: 'hist-seed-1',
+        timestamp: '2026-10-01T08:00:00.000Z',
+        decision: {
+          type: 'savings_contribution',
+          title: 'Initial Emergency Cushion Contribution',
+          amount: 1000,
+          day: 1,
+          category: 'Other',
+        },
+        createdGoalId: 'goal-seed-1',
+      },
+    ],
+  };
+}
